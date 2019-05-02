@@ -8,11 +8,6 @@ import { FormatStateObservable } from '../../plugins/format-state.observable.plu
 import { isNull } from '../../tools/is-null';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-@Directive({
-  selector: 'editor-content'
-})
-export class RoosterEditorContent{}
-
 @Component({
   selector: 'rooster-editor-box',
   templateUrl: './rooster-editor.component.html',
