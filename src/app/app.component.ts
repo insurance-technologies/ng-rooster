@@ -9,6 +9,12 @@ import { Subject } from 'rxjs';
 export class AppComponent {
   
    bold$ = new Subject<void>();
+   italic$ = new Subject<void>();
+   underline$ = new Subject<void>();
    fontSize: number;
+   fontName: string;
+
+   content: string;
+   
 
 }

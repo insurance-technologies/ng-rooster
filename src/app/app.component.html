@@ -1,5 +1,26 @@
 
 <button (click)="bold$.next(0)">Bold</button>
-<input type="number" [(ngModel)]="fontSize" >
+<button (click)="italic$.next(0)">Italic</button>
+<button (click)="underline$.next(0)">Underline</button>
 
-<rooster-editor-box [toggleBold$]="bold$" [fontSize]="fontSize + 'px'"></rooster-editor-box>
+<input type="text" [(ngModel)]="fontSize" >
+
+<input type="text" [(ngModel)]="fontName" >
+
+<rooster-editor-box 
+
+    [toggleBold$]="bold$" 
+    [toggleUnderline$]="underline$" 
+    [toggleItalic$]="italic$" 
+    [(fontSize)]="fontSize" 
+    [(fontName)]="fontName"
+
+    [(ngModel)]="content"
+
+    >
+
+</rooster-editor-box>
+
+<div>
+    {{content}}
+</div>

@@ -1,11 +1,16 @@
-import { EditorPlugin, Editor, PluginEvent, FormatState, PluginEventType } from 'roosterjs';
+import { EditorPlugin, Editor, PluginEvent, FormatState, PluginEventType, getFormatState, editTable } from 'roosterjs';
 import { Observable, Subject } from 'rxjs';
-
 
 export class FormatStateObservable extends Observable<FormatState> implements EditorPlugin
 {
     private _subject = new Subject<FormatState>();
+    private _contentChangeSubject = new Subject<string>();
     private editor: Editor;
+
+    public getContentObservable() : Observable<string>
+    {
+        return this._contentChangeSubject;
+    }
 
     constructor()
     {
@@ -27,14 +32,42 @@ export class FormatStateObservable extends Observable<FormatState> implements Ed
     
     dispose() : void
     {
-
+        this._subject.complete();
+        this._contentChangeSubject.complete();
     }
 
     onPluginEvent?(event: PluginEvent) : void
     {
-        switch(event)
+        console.log(event);
+        switch(event.eventType)
         {
-            case PluginEventType.
+            case PluginEventType.MouseDown:
+               this.getFormatState();
+            break;
+              
+            case PluginEventType.KeyDown:
+               this.getFormatState();
+            break;
+
+            case PluginEventType.ContentChanged:
+               this.getFormatState();       
+               
+            case PluginEventType.Input:
+               this.getContent();
+            break;
         }
     }
+
+    private getContent(): void
+    {
+        let content = this.editor.getContent(true);
+        this._contentChangeSubject.next(content);
+    }
+
+    private getFormatState(): void
+    {
+        let state = getFormatState(this.editor);
+        this._subject.next(state);
+    }
+
 }

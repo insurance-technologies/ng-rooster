@@ -8,7 +8,7 @@ import * as RoosterJs from 'roosterjs';
 export class EditorDirective implements OnInit {
   
   @Input() plugins?: RoosterJs.EditorPlugin[];
-  @Input() DefaultFormat?: RoosterJs.DefaultFormat;
+  @Input() defaultFormat?: RoosterJs.DefaultFormat;
   @Input() initialContent?: string;
   @Input() disableRestoreSelectionOnFocus?: boolean;
   @Input() omitContentEditableAttributeChanges?: boolean;  
@@ -27,7 +27,7 @@ export class EditorDirective implements OnInit {
     let nativeElement = this.el.nativeElement;
     this._editor = new RoosterJs.Editor(nativeElement, {
         plugins: this.plugins,
-        defaultFormat: this.DefaultFormat,
+        defaultFormat: this.defaultFormat,
         initialContent: this.initialContent,
         disableRestoreSelectionOnFocus: this.disableRestoreSelectionOnFocus,
         omitContentEditableAttributeChanges: this.omitContentEditableAttributeChanges
