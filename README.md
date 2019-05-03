@@ -1,5 +1,5 @@
 # ng-rooster
-ng-rooster is wrapper to roosterjs, an open source library created by Microsoft: https://github.com/minuz/ngx-roosterjs. 
+ng-rooster is wrapper to roosterjs, an open source library created by Microsoft: https://github.com/Microsoft/roosterjs. 
 
 # Getting Started
 
