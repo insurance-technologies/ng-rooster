@@ -12,6 +12,7 @@
     style="width: 500px; height: 500px"
 
     [toggleBold$]="bold$" 
+    (isBoldChange)="isBold = $event"
     [toggleUnderline$]="underline$" 
     [toggleItalic$]="italic$" 
     [(fontSize)]="fontSize" 
@@ -22,6 +23,8 @@
     >
 
 </rooster-editor-box>
+
+<h1>IsBold: {{isBold}}</h1>
 
 <div>
     {{content}}

@@ -276,6 +276,8 @@ export class RoosterEditorComponent implements OnInit, AfterViewInit, OnDestroy,
 
       let result: FormatState = {};
 
+      console.log(current);
+
       let keys = Object.keys(current);
       for(let i = 0; i < keys.length; i++)
       {
@@ -283,7 +285,7 @@ export class RoosterEditorComponent implements OnInit, AfterViewInit, OnDestroy,
         let previousValue = previous[key];
         let currentValue = current[key];
 
-        if(currentValue != previousValue)
+        if(currentValue !== previousValue)
           result[key] = currentValue;
       }
 

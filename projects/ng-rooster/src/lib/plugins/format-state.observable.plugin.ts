@@ -38,7 +38,7 @@ export class FormatStateObservable extends Observable<FormatState> implements Ed
 
     onPluginEvent?(event: PluginEvent) : void
     {
-        console.log(event);
+        //console.log(event);
         switch(event.eventType)
         {
             case PluginEventType.MouseDown:
