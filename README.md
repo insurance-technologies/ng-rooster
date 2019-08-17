@@ -47,7 +47,7 @@ The most high level and most easy to use method is using the rooster-editor-box 
 
 ```html
 
-  <rooster-editor-box></rooster-editor-box>
+  <rooster-editor-box style="width: 500px; height: 500px"></rooster-editor-box>
 
 ```
 
@@ -56,7 +56,7 @@ this component maps the inputs to the roosterjs api, for example if we want to k
 
 ```html
    
-   <rooster-editor-box [(fontSize)]="fontSize" ></rooster-editor-box>
+   <rooster-editor-box style="width: 500px; height: 500px" [(fontSize)]="fontSize" ></rooster-editor-box>
 
 ```
 
