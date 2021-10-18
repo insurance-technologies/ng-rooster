@@ -11,6 +11,11 @@
   "bugs": {
     "url": "https://github.com/insurance-technologies/ng-rooster/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/insurance-technologies/ng-rooster.git",
+    "directory":"projects/ng-rooster"
+  },
   "keywords": ["rooster", "editor", "text-editor", "roosterjs", "angular-rooster", "ng-rooster"],
   "license": "MIT",  
   "peerDependencies": {
